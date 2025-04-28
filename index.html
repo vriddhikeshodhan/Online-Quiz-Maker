@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QuizLet - Online Quiz Platform</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #f6e1ff, #f9f3b9); /* Lilac and light yellow */
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .navbar {
+      background-color: #b68aff; /* Lilac color for navbar */
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: white;
+      text-decoration: none;
+    }
+
+    .main-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      color: #6b3f9d;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      color: #8f5fbd;
+      max-width: 600px;
+    }
+
+    .options {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 12px 25px;
+      background-color: #f9f3b9; /* Light yellow */
+      color: #6b3f9d; /* Deep lilac */
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: background-color 0.3s, transform 0.3s;
+      border: 2px solid #6b3f9d;
+    }
+
+    .btn:hover {
+      background-color: #f6e1ff; /* Lilac on hover */
+      color: white;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      color: #8f5fbd; /* Soft lilac */
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="navbar">
+    <a href="index.html" class="logo">QuizLet</a>
+  </div>
+
+  <div class="main-content">
+    <h1>Welcome to QuizLet</h1>
+    <p>Create quizzes, take quizzes, challenge yourself, and rise up the leaderboard!</p>
+
+    <div class="options">
+      <a href="login.html" class="btn">Login</a>
+      <a href="register.html" class="btn">Register</a>
+    </div>
+  </div>
+
+  <footer>
+    Made with ❤️ by Vriddhi Keshodhan
+  </footer>
+
+</body>
+</html>

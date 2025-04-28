@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leaderboard</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #e0bbff, #fff9c4);
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+        }
+        .container {
+            background: white;
+            padding: 20px 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #b388eb;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        h1 {
+            color: #6a1b9a;
+        }
+        .btn {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #9575cd;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #7e57c2;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Leaderboard</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Quiz Title</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody id="leaderboard-body">
+            <!-- Data will be filled here -->
+        </tbody>
+    </table>
+
+    <button class="btn" onclick="window.location.href='dashboard.html'">Back to Dashboard</button>
+</div>
+
+<script>
+    fetch('get_leaderboard.php')
+        .then(response => response.json())
+        .then(data => {
+            const tbody = document.getElementById('leaderboard-body');
+            tbody.innerHTML = '';
+
+            if (data.length === 0) {
+                tbody.innerHTML = "<tr><td colspan='3'>No records found.</td></tr>";
+            } else {
+                data.forEach(row => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td>${row.username}</td>
+                        <td>${row.quiz_title}</td>
+                        <td>${row.score}</td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching leaderboard:', error);
+        });
+</script>
+
+</body>
+</html>

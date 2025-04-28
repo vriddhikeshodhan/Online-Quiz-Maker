@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Quiz</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz Completed!</h1>
+        <form action="submit_quiz.php" method="POST">
+            <input type="hidden" name="quiz_id" value="<?php echo $quiz_id; ?>">
+            
+            <div class="quiz-results">
+                <h3>Your Score: <span id="score"><?php echo $score; ?></span></h3>
+            </div>
+            
+            <a href="leaderboard.html">View Leaderboard</a>
+        </form>
+    </div>
+</body>
+</html>
